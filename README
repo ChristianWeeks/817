@@ -1,0 +1,40 @@
+Christian Weeks
+Cp Sc 817 - Physically based Animation
+Project 1
+Dr. Donald House
+
+--------------------------------------------------------------------------------------------------------
+Implementation:
+Basic bounce with coefficients of friction and restitution.  For integration, I used the average
+of the euler integration at the beginning and end of the timestep, like in the book.  Resting contact
+was not implemented, unfortunately.  I also didn't get to moving the box around.
+--------------------------------------------------------------------------------------------------------
+Compiling:
+Should be short and sweet with the included makefile.  All you need to do is run
+>make
+>./run
+
+NOTE: Usually, the first time I run it after starting up the computer, the ball will disappear. I
+think this is an artifact of the way the timestepping works, as glut doesn't have a great way of 
+managing framerate.  So when the program takes a few seconds to start up, it calculates for a
+very large timestep.  I am still unsure why this bypasses the collision methods.  Regardless,
+if you quit and start again it should work every time, and I haven't had any problem with the ball
+falling out of the box after the first run.
+--------------------------------------------------------------------------------------------------------
+Key Commands:
+I did not use your camera class because I am stubborn.  So instead you get to use my terrible
+terrible camera:
+
+a, d - rotate around y axis
+w, s - rotate around x axis
+r, f - rotate around z axis
+
+g - reset the simulation with a pseudo-random position and velocity for the ball
+--------------------------------------------------------------------------------------------------------
+Other comments-
+
+The front faces are all transparent but still have their outlines drawn.  Unfortunately, the effect is
+not dynamic, so if you rotate around to the back you won't be able to see the ball.
+
+
+
